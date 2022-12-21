@@ -3,7 +3,7 @@ import { useDispatch} from "react-redux";
 import FormInput from "./FormInput";
 import { getFirstName, getLastName, getBirthDate, getCity, getDepartment, getStartDate, getState, getStreet, getZipCode } from "../features/inputSlice";
 import { getFirstNameError, getLastNameError, getCityError, getZipCodeError, getStreetError } from "../features/errorSlice";
-import validateSyntax from "../checkForm";
+import validateSyntax from "../hooks/checkForm";
 import { pendingForm } from "../features/formSlice";
 import { departmentTab, inputsArray, statesTab  } from "../data/formData";
 import SelectOption from "../lib/SelectOption";
