@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(224, 235, 211);
+}
+
+a{
+    margin-top: 40px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 100px;
+    background-color: white;
+}
+.header h1{
+    border-bottom: solid black 2px ;
+}
+.header img{
+    width: 100px;
+}
+.container{
+    display: flex;
+    padding: 10px 100px;
+}
+
+.createemployee{
+    display: flex;
+    flex-direction: column;
+}
+
+.list{
+    flex-direction: column;
+}
+
+
+.mb-3 {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.col-md-4{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_input{
+    display: flex;
+    flex-direction: column;
+}
+.category_table{
+    display: flex;
+}
+.buttons_sort{
+    display: flex;
+    flex-direction: column;
+}
+.buttons_sort button {
+    background-color: transparent;
+    border: none;
+}
+
+.address_form{
+    margin: 30px 0px 30px 0px;
+    border: 2px solid black;
+    background-color: rgb(76, 112, 74);
+    color: white;
+    padding: 30px 20px;
+}
+
+.submit_button {
+    margin-top: 20px;
+}
+
+.modal_container {
+    background-color: black;
+}
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.first_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list .dropdown{
+   width: 25%;
+   display: flex;
+   flex-direction: row;
+}
+
+.employee_in_tab:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+.message_form_not_valid{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 25px;
+}
