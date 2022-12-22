@@ -97,6 +97,7 @@ const numbers = [
     {'name': 5},
     {'name': 15},
     {'name': 20},
+    {'name': 'All'},
 ]
 const departmentTab = [
     {'name' : 'Sales'},
@@ -345,4 +346,4 @@ const statesTab = [
     }
 ];
 
-export {departmentTab, statesTab, numbers, categoriesTable, inputsArray}
+export {departmentTab, statesTab, numbers, categoriesTable, inputsArray }

@@ -6,11 +6,11 @@ function DefaultTab(){
     return (
         <Table>
             <thead>
-            <tr> 
-                {categoriesTable.map((category, index) => {
-                return <th key={index}>{category.label}</th> 
-                })}
-            </tr>
+                <tr> 
+                    {categoriesTable.map((category, index) => {
+                    return <th key={index}>{category.label}</th> 
+                    })}
+                </tr>
             </thead>
             <tbody>
                 <tr className='employee_in_tab'>

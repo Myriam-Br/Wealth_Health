@@ -1,9 +1,9 @@
 import React from "react";
 import FormContainer from "../components/FormContainer";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetErrorForm } from "../features/errorSlice";
 import { resetInputs } from "../features/inputSlice";
+import HandleLink from "../components/HandleLink";
 
 function CreateEmployee() {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ function CreateEmployee() {
     return <div className="container createemployee">
         <h2>Create Employee</h2>
         <FormContainer/>
-        <Link to={'/employeelist'} onClick={() => handleStatus()}>View Current Employees</Link>
+        <HandleLink to = {'/employeelist'} onClick={() => handleStatus()} text={'View Current Employees'}/>
     </div>
 }
 

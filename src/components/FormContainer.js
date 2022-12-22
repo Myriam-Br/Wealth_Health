@@ -91,11 +91,6 @@ function FormContainer () {
         <FormGroup/>
         <Button className="submit_button" variant="primary" type="submit" onClick={(e) => submitForm(e, handleForm(employee))}>Save</Button>
         <h4 className="message_form_not_valid">{formError}</h4>
-      
-
-
-
-
         <ModalContainer/>
     </div>
 }

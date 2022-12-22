@@ -9,6 +9,9 @@ a{
     margin-top: 40px;
 }
 
+h2{
+    color: rgb(2, 59, 11);
+}
 .header{
     display: flex;
     justify-content: space-between;

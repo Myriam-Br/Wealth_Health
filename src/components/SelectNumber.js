@@ -27,7 +27,7 @@ function SelectNumber(){
 
     //number of page needed
     function numPages() {
-        if(range === null) {
+        if(range === null || range === 0) {
             return 1
         }else{
             return Math.ceil(employeeList.length / range )
@@ -104,22 +104,15 @@ function SelectNumber(){
         }
     }
 
-
-    if(range!==null) {
-        return (
-            <div  className='pagination'>
-                <span>Show {currentPage} of {numPages()} pages</span>
-                <div className="button_previous_next">
+    return(<div>
+        <p  className='pagination'>Show {currentPage} of {numPages()}</p>
+        {range!==null ?( <div className="button_previous_next">
                 <ButtonComponent onClick = {() => handlePages('previous')} label = "previous page" icon={<FiChevronsLeft/>}/>
                 <span>{currentPage}</span>
                 <ButtonComponent onClick = {() => handlePages('next')} label = "next page"  icon={<FiChevronsRight/>}/>
                 </div>
-            
-            </div>
-        ) 
-    }else{
-        return <span  className='pagination'>Show {numPages()} page</span>
-    }
+                ):(<p></p>)}
+    </div>)
    
 }
 

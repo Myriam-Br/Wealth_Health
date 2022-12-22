@@ -20,7 +20,6 @@ function FormGroup() {
 
     function valueInput(value, input){
         dispatch(pendingForm())
-
         let res = validateSyntax(input, value) 
             if(res !== 'undefined') {
                 switch(input) {
@@ -106,9 +105,8 @@ function FormGroup() {
         <form>
             <div className="first_row">
                 {first_row.map((elt, index) => {
-                    return <FormInput key={index} label={elt.label} id={elt.id} type={elt.type} onChange={(e) => valueInput(e.target.value, elt.id)}/>
-                })
-                
+                        return <FormInput key={index} label={elt.label} id={elt.id} type={elt.type} onChange={(e) => valueInput(e.target.value, elt.id)}/>
+                    })
                 }
             </div>
 

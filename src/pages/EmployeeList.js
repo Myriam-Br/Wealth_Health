@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch} from "react-redux";
-import { Link } from "react-router-dom";
 import { numbers } from "../data/formData";
 import {getCurrentValue, resetNumberResult, switchPage, tableRange} from "../features/numberResultSlice";
 import { getStatus } from "../features/numberResultSlice";
@@ -8,11 +7,21 @@ import SelectOption from "../lib/SelectOption";
 import SearchBar from "../components/SearchBar";
 import SelectNumber from "../components/SelectNumber";
 import TableContainer from "../components/TableContainer";
+import HandleLink from "../components/HandleLink";
 
 function EmployeeList() {
     const dispatch = useDispatch()
 
     function handleStatus(value) {
+        
+        if(value === 'All') {
+            value = "0"
+            dispatch(tableRange(parseInt(value)))
+        }else{
+            dispatch(tableRange(parseInt(value)))
+        }
+
+
         dispatch(tableRange(parseInt(value)))
         dispatch(getStatus('current'))
         dispatch(switchPage(1))
@@ -38,7 +47,7 @@ function EmployeeList() {
         </div>
         <TableContainer/>
         <SelectNumber/>
-        <Link to={'/createemployee'} onClick = {() => dispatch(resetNumberResult())}>Home</Link>
+        <HandleLink to = {'/createemployee'} onClick={() => dispatch(resetNumberResult())} text={'Home'}/>
     </div>
 }
 
