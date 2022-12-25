@@ -6,6 +6,13 @@ export const listSlice = createSlice({
     initialState : initialState,
     reducers: {
         createEmployee : (state, actions) => {
+            console.log('TEST',actions.payload);
+            if(JSON.parse(localStorage.getItem('employees'))) {
+                state.employeeList = JSON.parse(localStorage.getItem('employees'))
+            }else{
+                state.employeeList = []
+            }
+
             state.employeeList.push(actions.payload);
             localStorage.setItem('employees',JSON.stringify(state.employeeList))
         },

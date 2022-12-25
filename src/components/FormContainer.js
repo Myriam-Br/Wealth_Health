@@ -1,7 +1,7 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux"
 import Button from 'react-bootstrap/Button';
-import { createEmployee, getArray } from "../features/listSlice";
+import { createEmployee } from "../features/listSlice";
 import {validateForm, rejectForm} from "../features/formSlice";
 import { getFirstNameError, getLastNameError, getCityError, getZipCodeError, getStreetError, getErrorForm } from "../features/errorSlice";
 import ModalContainer from "./Modal";
@@ -11,16 +11,18 @@ function FormContainer () {
     const dispatch = useDispatch()
     //handle input employee
     const {employee} = useSelector(state => state.input)
-
+    console.log('EMPLOYEE',employee);
+    const {employeeList} = useSelector(state => state.list)   
+    console.log('LIST',employeeList); 
     //handle error inputs
     const {formError} = useSelector(state => state.error)
 
     //status form
     const {isSent} = useSelector(state => state.form)
 
-    function handleForm(employee) { 
-        let employeeForm = Object.entries(employee).filter(([key, value]) =>  value === '' || value === "undefined")
-        
+    function handleForm(newEmployee) { 
+        let employeeForm = Object.entries(newEmployee).filter(([key, value]) =>  value === '' || value === "undefined")
+
         try {       
             if(employeeForm.length > 0) {
                 dispatch(rejectForm())
@@ -29,12 +31,8 @@ function FormContainer () {
             else{
                 dispatch(validateForm())
                 dispatch(getErrorForm(''))
-
-                //get array with data already saved
-                dispatch(getArray())
-
                 //add new employee to array
-                dispatch(createEmployee(employee))  
+                dispatch(createEmployee(newEmployee)) 
             }
         }
         catch {
@@ -42,6 +40,7 @@ function FormContainer () {
         } 
 
         return isSent
+
     }
 
     function handleError() {

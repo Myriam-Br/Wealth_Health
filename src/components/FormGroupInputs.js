@@ -74,22 +74,27 @@ function FormGroup() {
             if(res === 'undefined') {
                 switch(input){
                     case 'firstname':
+                        dispatch(getFirstName(res))
                         dispatch(getFirstNameError('Firstname must contain only letters and no spaces'))
                         break
             
                     case 'lastname':
+                        dispatch(getLastName(res))
                         dispatch(getLastNameError('Lastname must contain only letters and no spaces'))
                         break
 
                     case 'city':
+                        dispatch(getCity(res))
                         dispatch(getCityError('city must contain only letters '))
                         break
             
                     case 'street':
+                        dispatch(getStreet(res))
                         dispatch(getStreetError('street must contain only letters'))
                         break
             
                     case 'zipCode':
+                        dispatch(getZipCode(res))
                         dispatch(getZipCodeError('Zipcode must contain only 5 numbers and no spaces'))
                         break
 
