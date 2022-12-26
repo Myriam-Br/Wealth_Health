@@ -90,10 +90,9 @@ const inputsArray = [
     },
 ]
 
-
-
 const numbers = [
     {'name': 1},
+    {'name': 2},
     {'name': 5},
     {'name': 15},
     {'name': 20},

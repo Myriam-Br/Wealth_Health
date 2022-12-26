@@ -11,9 +11,7 @@ function FormContainer () {
     const dispatch = useDispatch()
     //handle input employee
     const {employee} = useSelector(state => state.input)
-    console.log('EMPLOYEE',employee);
-    const {employeeList} = useSelector(state => state.list)   
-    console.log('LIST',employeeList); 
+
     //handle error inputs
     const {formError} = useSelector(state => state.error)
 
@@ -31,6 +29,7 @@ function FormContainer () {
             else{
                 dispatch(validateForm())
                 dispatch(getErrorForm(''))
+                
                 //add new employee to array
                 dispatch(createEmployee(newEmployee)) 
             }

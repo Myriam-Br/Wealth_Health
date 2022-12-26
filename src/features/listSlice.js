@@ -6,7 +6,7 @@ export const listSlice = createSlice({
     initialState : initialState,
     reducers: {
         createEmployee : (state, actions) => {
-            console.log('TEST',actions.payload);
+            //check if array exist in local storage
             if(JSON.parse(localStorage.getItem('employees'))) {
                 state.employeeList = JSON.parse(localStorage.getItem('employees'))
             }else{

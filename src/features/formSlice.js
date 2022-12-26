@@ -19,9 +19,6 @@ export const formSlice = createSlice({
           state.isSent = false
           state.isRejected = true
      },
-     formValid:(state, actions) => {
-          state.isValid = actions.payload
-     },
      resetForm : (state) => {
           state = initialState
           return state
@@ -29,5 +26,5 @@ export const formSlice = createSlice({
     }
 })
 
-export const {pendingForm, validateForm, rejectForm, resetForm,formValid} = formSlice.actions
+export const {pendingForm, validateForm, rejectForm, resetForm} = formSlice.actions
 export default formSlice.reducer

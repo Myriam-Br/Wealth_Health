@@ -25,7 +25,7 @@ function displayNextData(currentValue, employeeList, tab, range) {
  //get previous data -> on click previous button
  function displayPreviousData(currentValue, employeeList, tab, range) {
     employeeList.filter((employee, index) =>{   
-        if((currentValue - range) < index && index <= currentValue ) {
+        if((currentValue + range) > index && index >= currentValue ) {
             tab.push(employee)
         }
         return employee
